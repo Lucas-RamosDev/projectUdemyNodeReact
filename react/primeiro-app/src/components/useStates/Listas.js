@@ -1,0 +1,55 @@
+import { useState } from 'react'
+
+function Listas() {
+
+  const [input, setInput] = useState('')
+
+  const [tarefas, setTarefas] = useState([
+    'Pagar a conta de Luz',
+    'Estudar JavaScript'
+  ])
+
+
+
+  function handleRegister(e){
+    e.preventDefault()
+
+    setTarefas([...tarefas, input])
+    setInput('')
+
+    alert('Regstrado cadastrado com sucesso')
+  }
+
+  return(
+
+    <div>
+
+      <h1>Cadastrando uma Tarefa</h1>
+
+      <form onSubmit={handleRegister}>
+        <label>Nome da Tarefa:</label><br/>
+        <input 
+          placeholder='digite uma tarefa'
+          value={input}
+          onChange={(e) => setInput(e.target.value) }
+        /><br/><br/>
+
+        <button type='submit'>Registrar</button>
+
+      </form>
+
+      <br/><br/>
+
+      <ul>
+        {tarefas.map( tarefa => (
+          <li key={tarefa}>{tarefa}</li>
+        ))}
+
+      </ul>
+
+    </div>
+
+  )
+}
+
+export default Listas
