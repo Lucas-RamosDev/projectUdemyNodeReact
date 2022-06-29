@@ -1,8 +1,10 @@
-.meus-filmes:{
+.meus-filmes {
+
   margin-top: 24px;
   display: flex;
-  justify-content: column;
+  flex-direction: column;
   align-items: center;
+
 }
 
 .meus-filmes h1 {
@@ -22,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-botton: 14px;
+  margin-bottom: 14px;
 }
 
 .meus-filmes div {
